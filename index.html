@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ゼロ幅追加</title>
+</head>
+<style>
+.tekito {
+    height: 40%;
+    width: 50%;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 0 0 1px #ccc inset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size:24pt;
+}
+
+.tekito {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(33, 150, 243) inset;
+}
+
+</style>
+<body>
+
+<div>
+<textarea cols="50" rows="10" id="zero" class = "tekito"></textarea>
+</div>
+
+<div>
+<input type="button" value="ゼロ幅追加" id="add">
+</div>
+
+<p id="complete">ここに出たのをコピペ</p>
+
+<script>
+function butotnClick(){
+             str= zero.value;
+             str = str.replace(/(.)/g, "$1​");
+             complete.innerText = str;
+}
+
+let zero = document.getElementById('zero');
+let complete = document.getElementById('complete');
+
+let checkButton = document.getElementById('add');
+checkButton.addEventListener('click', butotnClick);
+</script>
+
+</body>
+</html>
